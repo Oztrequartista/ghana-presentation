@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+::selection {
+  background: #FCD116;
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
