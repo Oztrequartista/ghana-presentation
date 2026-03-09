@@ -52,7 +52,7 @@ export default function CultureSlide() {
           </motion.p>
         </ParallaxLayer>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {culturePoints.map((point, i) => (
               <motion.div
@@ -63,10 +63,10 @@ export default function CultureSlide() {
                 className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-5 backdrop-blur-sm hover:border-ghana-green/50 hover:bg-ghana-green/5 transition-all duration-500 group"
                 style={{ perspective: 800 }}
               >
-                <h3 className="font-poppins font-semibold text-base text-ghana-gold group-hover:text-ghana-gold transition-colors">
+                <h3 className="font-poppins font-semibold text-sm sm:text-base text-ghana-gold group-hover:text-ghana-gold transition-colors">
                   {point.title}
                 </h3>
-                <p className="font-poppins text-sm text-white/60 mt-2 group-hover:text-white/80 transition-colors">
+                <p className="font-poppins text-xs sm:text-sm text-white/60 mt-1 sm:mt-2 group-hover:text-white/80 transition-colors">
                   {point.desc}
                 </p>
               </motion.div>
@@ -77,7 +77,7 @@ export default function CultureSlide() {
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
-            className="space-y-4"
+            className="space-y-3 sm:space-y-4"
           >
             <div className="relative rounded-xl overflow-hidden">
               <img src={festivalImg} alt="Kente Fashion" className="w-full h-28 sm:h-40 object-cover" />
@@ -85,7 +85,7 @@ export default function CultureSlide() {
               <p className="absolute bottom-2 left-3 font-poppins text-xs text-white/80">Kente Fashion in Ghana</p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
               <h3 className="font-poppins font-semibold text-sm text-ghana-gold mb-3">
                 Akan Day Names
               </h3>

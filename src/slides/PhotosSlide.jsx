@@ -71,9 +71,9 @@ export default function PhotosSlide() {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="font-poppins text-xs text-white font-medium">{photo.label}</p>
+              <div className="absolute inset-0 flex items-end opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-full p-1.5 sm:p-3 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="font-poppins text-[9px] sm:text-xs text-white font-medium">{photo.label}</p>
                 </div>
               </div>
             </motion.div>

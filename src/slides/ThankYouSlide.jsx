@@ -31,7 +31,7 @@ export default function ThankYouSlide() {
         </Canvas>
       </div>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -62,7 +62,7 @@ export default function ThankYouSlide() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 1.2, duration: 0.8, ease: 'easeOut' }}
-          className="mt-8 h-1 w-32 rounded-full"
+          className="mt-6 sm:mt-8 h-1 w-24 sm:w-32 rounded-full"
           style={{ background: 'linear-gradient(90deg, #CE1126, #FCD116, #006B3F)' }}
         />
 
@@ -70,12 +70,12 @@ export default function ThankYouSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.6 }}
-          className="mt-8 space-y-2"
+          className="mt-6 sm:mt-8 space-y-2"
         >
-          <p className="font-poppins text-lg text-white/50">
+          <p className="font-poppins text-base sm:text-lg text-white/50">
             Questions?
           </p>
-          <p className="font-poppins text-sm text-white/30 italic">
+          <p className="font-poppins text-xs sm:text-sm text-white/30 italic">
             "The spirit of Ghana lives in every one of us."
           </p>
         </motion.div>

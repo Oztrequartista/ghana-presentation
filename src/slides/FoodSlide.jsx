@@ -10,7 +10,7 @@ const foods = [
   {
     name: 'Fufu',
     desc: 'Pounded cassava and plantain — the staple. Served with light soup or groundnut soup.',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ghana_fufu.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Fufu_and_light_soup_in_ceramic_bowl.jpg',
   },
   {
     name: 'Waakye',
@@ -93,8 +93,8 @@ export default function FoodSlide() {
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
               </div>
-              <div className="p-3">
-                <h3 className="font-poppins font-semibold text-sm text-ghana-gold">
+              <div className="p-2 sm:p-3">
+                <h3 className="font-poppins font-semibold text-xs sm:text-sm text-ghana-gold">
                   {food.name}
                 </h3>
                 <p className="font-poppins text-[11px] text-white/50 mt-1 group-hover:text-white/70 transition-colors line-clamp-3">

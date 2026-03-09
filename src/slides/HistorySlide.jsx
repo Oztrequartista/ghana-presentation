@@ -66,8 +66,8 @@ export default function HistorySlide() {
           </motion.p>
         </ParallaxLayer>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 items-start">
+          <div className="space-y-3 sm:space-y-4">
             {timelineEvents.map((event, i) => (
               <motion.div
                 key={event.year}
@@ -80,8 +80,8 @@ export default function HistorySlide() {
                 <span className="font-poppins font-bold text-base sm:text-xl text-white/90 min-w-[50px] sm:min-w-[60px] group-hover:text-white transition-colors">
                   {event.year}
                 </span>
-                <div className="flex-1 border-l border-white/20 pl-4 group-hover:border-white/50 transition-colors">
-                  <p className="font-poppins text-sm text-white/70 group-hover:text-white/90 transition-colors">
+                <div className="flex-1 border-l border-white/20 pl-3 sm:pl-4 group-hover:border-white/50 transition-colors">
+                  <p className="font-poppins text-xs sm:text-sm text-white/70 group-hover:text-white/90 transition-colors">
                     {event.text}
                   </p>
                 </div>
@@ -129,7 +129,7 @@ export default function HistorySlide() {
           transition={{ delay: 1.5 }}
           className="mt-4 sm:mt-8 p-3 sm:p-4 border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm"
         >
-          <p className="font-poppins text-sm text-white/60 text-center italic">
+          <p className="font-poppins text-xs sm:text-sm text-white/60 text-center italic">
             "We face neither East nor West; we face forward." — Kwame Nkrumah
           </p>
         </motion.div>

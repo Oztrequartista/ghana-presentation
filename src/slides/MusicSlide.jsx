@@ -84,10 +84,10 @@ export default function MusicSlide() {
                 whileHover={{ x: 10, scale: 1.02 }}
                 className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 backdrop-blur-sm hover:border-ghana-red/40 transition-all duration-300 cursor-pointer"
               >
-                <h3 className="font-poppins font-semibold text-base text-ghana-gold">
+                <h3 className="font-poppins font-semibold text-sm sm:text-base text-ghana-gold">
                   {genre.name}
                 </h3>
-                <p className="font-poppins text-sm text-white/50 mt-1">
+                <p className="font-poppins text-xs sm:text-sm text-white/50 mt-1">
                   {genre.desc}
                 </p>
               </motion.div>

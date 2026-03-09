@@ -37,18 +37,18 @@ export default function GeographySlide({ isActive }) {
             A jewel on the Gulf of Guinea
           </motion.p>
 
-          <div className="grid grid-cols-2 gap-3 mb-6">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
             {facts.map((fact, i) => (
               <motion.div
                 key={fact.label}
                 initial={{ opacity: 0, y: 20, rotateX: -20 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-3 backdrop-blur-sm hover:border-ghana-gold/40 hover:bg-ghana-gold/5 transition-all duration-300"
+                className="bg-white/5 border border-white/10 rounded-lg p-2 sm:p-3 backdrop-blur-sm hover:border-ghana-gold/40 hover:bg-ghana-gold/5 transition-all duration-300"
                 style={{ perspective: 600 }}
               >
-                <p className="font-poppins text-xs text-white/40 uppercase tracking-wider">{fact.label}</p>
-                <p className="font-poppins text-sm text-white font-semibold mt-1">{fact.value}</p>
+                <p className="font-poppins text-[10px] sm:text-xs text-white/40 uppercase tracking-wider">{fact.label}</p>
+                <p className="font-poppins text-xs sm:text-sm text-white font-semibold mt-0.5 sm:mt-1">{fact.value}</p>
               </motion.div>
             ))}
           </div>

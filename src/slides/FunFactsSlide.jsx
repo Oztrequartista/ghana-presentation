@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import { ParallaxLayer } from '../components/MouseParallax'
 
 const facts = [
-  { icon: '🥇', title: "Africa's #1 Gold Producer", desc: 'Largest gold producer on the continent, 6th in the world', color: '#FCD116' },
-  { icon: '🍫', title: '2nd Largest Cocoa Producer', desc: '1/3 of the world\'s chocolate starts in Ghana', color: '#8B4513' },
-  { icon: '🌊', title: 'Lake Volta', desc: "World's largest man-made lake by surface area", color: '#1a5276' },
-  { icon: '🏔️', title: 'Wli Waterfall', desc: "West Africa's tallest at ~1,600 feet", color: '#006B3F' },
-  { icon: '⚰️', title: 'Fantasy Coffins', desc: 'Teshie artisans craft coffins shaped like cars, fish, and phones', color: '#CE1126' },
-  { icon: '⚽', title: 'Black Stars', desc: '4x African Cup of Nations champions', color: '#000' },
-  { icon: '🏛️', title: 'AfCFTA HQ', desc: 'Accra hosts the African Continental Free Trade Area Secretariat', color: '#006B3F' },
-  { icon: '🇺🇳', title: 'Kofi Annan', desc: 'Born on a Friday ("Kofi") — former UN Secretary-General', color: '#FCD116' },
+  { icon: '🥇', title: "Africa's #1 Gold Producer", desc: 'Largest gold producer on the continent, 6th in the world', color: '#FCD116', img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Mponeng-goudmyn,_Merafong_City-pm,_Wesrand-dm,_a.jpg' },
+  { icon: '🍫', title: '2nd Largest Cocoa Producer', desc: '1/3 of the world\'s chocolate starts in Ghana', color: '#8B4513', img: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Mary_Adwoa_Acheampongmaa_02.jpg' },
+  { icon: '🌊', title: 'Lake Volta', desc: "World's largest man-made lake by surface area", color: '#1a5276', img: 'https://upload.wikimedia.org/wikipedia/commons/2/28/Photo_of_Lake_Volta_near_the_Afrikiko_Hotel,_Akosombo,_Ghana.jpg' },
+  { icon: '🏔️', title: 'Wli Waterfall', desc: "West Africa's tallest waterfall", color: '#006B3F', img: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Kakum_National_Park,_Ghana.jpg' },
+  { icon: '⚰️', title: 'Fantasy Coffins', desc: 'Teshie artisans craft coffins shaped like cars, fish, and phones', color: '#CE1126', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Accra_(Ghana)_-_Fantasy_coffins_(adebuu_adekai)_-_4.jpg' },
+  { icon: '⚽', title: 'Black Stars', desc: '4x AFCON champions & first African team to reach a World Cup quarter-final (2010)', color: '#000', img: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Black_Stars_(Ghana_national_football_team)_XI.jpg' },
+  { icon: '🌿', title: 'Kakum Canopy Walkway', desc: 'One of only 3 canopy walkways in Africa — suspended 40m above the rainforest', color: '#006B3F', img: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Kakum_Canopy_Walk.jpg' },
+  { icon: '🇺🇳', title: 'Kofi Annan', desc: 'Born on a Friday ("Kofi") — former UN Secretary-General', color: '#FCD116', img: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Kofi_Annan_(2018).jpg' },
 ]
 
 function CountUp({ target, duration = 2, suffix = '' }) {
@@ -96,20 +96,40 @@ export default function FunFactsSlide() {
                 stiffness: 80,
                 damping: 15,
               }}
-              whileHover={{
-                scale: 1.05,
-                y: -5,
-                boxShadow: `0 20px 40px ${fact.color}20`,
-              }}
-              className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 backdrop-blur-sm hover:border-white/20 transition-all duration-300 cursor-default"
+              className="group cursor-pointer"
+              style={{ perspective: 800 }}
             >
-              <span className="text-2xl sm:text-3xl">{fact.icon}</span>
-              <h3 className="font-poppins font-semibold text-xs sm:text-sm text-white mt-2 sm:mt-3">
-                {fact.title}
-              </h3>
-              <p className="font-poppins text-xs text-white/50 mt-1">
-                {fact.desc}
-              </p>
+              <div
+                className="relative w-full h-[140px] sm:h-[170px] transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                <div
+                  className="absolute inset-0 bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 backdrop-blur-sm flex flex-col justify-start"
+                  style={{ backfaceVisibility: 'hidden' }}
+                >
+                  <span className="text-2xl sm:text-3xl">{fact.icon}</span>
+                  <h3 className="font-poppins font-semibold text-xs sm:text-sm text-white mt-2 sm:mt-3">
+                    {fact.title}
+                  </h3>
+                  <p className="font-poppins text-[10px] sm:text-xs text-white/50 mt-1 line-clamp-3">
+                    {fact.desc}
+                  </p>
+                </div>
+                <div
+                  className="absolute inset-0 rounded-xl overflow-hidden"
+                  style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+                >
+                  <img
+                    src={fact.img}
+                    alt={fact.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                    <p className="font-poppins text-xs text-white font-semibold">{fact.title}</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

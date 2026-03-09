@@ -13,7 +13,7 @@ export default function TitleSlide() {
       <div className="absolute inset-0 bg-black/60" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
 
-      <ParallaxLayer depth={0.5} className="relative z-10 text-center px-8">
+      <ParallaxLayer depth={0.5} className="relative z-10 text-center px-4 sm:px-8">
         <motion.div
           initial={{ rotateX: 90, opacity: 0, y: -100 }}
           animate={{ rotateX: 0, opacity: 1, y: 0 }}
@@ -57,15 +57,26 @@ export default function TitleSlide() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 1.6, duration: 1, ease: 'easeOut' }}
-          className="mt-8 mx-auto h-1 w-48 rounded-full"
+          className="mt-6 sm:mt-8 mx-auto h-1 w-48 rounded-full"
           style={{ background: 'linear-gradient(90deg, #CE1126, #FCD116, #006B3F)' }}
         />
 
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
+          className="mt-4 sm:mt-6 max-w-xl mx-auto"
+        >
+          <p className="font-poppins text-xs sm:text-sm text-white/50 text-center leading-relaxed">
+            The Independence Arch stands in Black Star Square, Accra — built to commemorate Ghana becoming the first sub-Saharan African nation to gain independence on March 6, 1957. Its inscription reads <span className="text-ghana-gold italic">"Freedom and Justice"</span>.
+          </p>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.2, duration: 1 }}
-          className="mt-12 flex items-center justify-center gap-2 text-white/40 text-sm"
+          transition={{ delay: 2.6, duration: 1 }}
+          className="mt-6 sm:mt-8 flex items-center justify-center gap-2 text-white/40 text-sm"
         >
           <motion.span
             animate={{ y: [0, 8, 0] }}
